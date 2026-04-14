@@ -1,0 +1,61 @@
+---
+title: "Quickstart"
+description: "Get started with Allternit in 5 minutes"
+---
+
+# Quickstart
+
+Get up and running with Allternit in just a few minutes.
+
+## Prerequisites
+
+- Node.js 18+ or Python 3.10+
+- Git
+- A code editor (VS Code recommended)
+
+## Installation
+
+### 1. Install Gizzi Code
+
+```bash
+curl -fsSL https://install.gizziio.com/install | bash
+```
+
+Verify installation:
+
+```bash
+gizzi --version
+```
+
+### 2. Initialize a Project
+
+```bash
+mkdir my-agent && cd my-agent
+gizzi init
+```
+
+### 3. Configure Your Provider
+
+Create `.gizzi/config.yaml`:
+
+```yaml
+providers:
+  default: claude
+  claude:
+    api_key: ${CLAUDE_API_KEY}
+    model: claude-sonnet-4-20250514
+```
+
+### 4. Run Your First Agent
+
+```bash
+gizzi run hello-world
+```
+
+You'll see A://TERNIT ready in your terminal.
+
+## What's Next?
+
+- [Gizzi Code CLI](/gizzi-code/cli) — Learn all CLI commands
+- [Configuration](/gizzi-code/configuration) — Advanced config options
+- [Skills](/core/skills) — Add capabilities to your agents

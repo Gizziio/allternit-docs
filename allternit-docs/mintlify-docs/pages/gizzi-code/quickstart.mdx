@@ -1,0 +1,37 @@
+---
+title: "Gizzi Code Quickstart"
+description: "Get started with Gizzi Code CLI"
+---
+
+# Gizzi Code Quickstart
+
+Gizzi Code is the CLI and local runtime for Allternit agents.
+
+## Installation
+
+```bash
+curl -fsSL https://install.gizziio.com/install | bash
+```
+
+## Create Your First Agent
+
+```bash
+# Create project
+gizzi init my-agent
+cd my-agent
+
+# Run the sample agent
+gizzi run hello
+```
+
+## Project Structure
+
+```
+my-agent/
+├── .gizzi/
+│   └── config.yaml      # Runtime configuration
+├── agents/
+│   └── hello.ts         # Agent definition
+├── skills/              # Custom skills
+└── package.json
+```

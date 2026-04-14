@@ -1,0 +1,52 @@
+---
+title: "Skills"
+description: "Extensible capability system"
+---
+
+# Skills
+
+Skills add capabilities to agents.
+
+## Built-in Skills
+
+| Skill | Description |
+|-------|-------------|
+| `@gizzi/skill-http` | HTTP requests |
+| `@gizzi/skill-filesystem` | File operations |
+| `@gizzi/skill-browser` | Browser automation |
+| `@gizzi/skill-desktop` | Desktop control |
+
+## Using Skills
+
+```typescript
+import { http, fs } from "@gizzi/skills";
+
+// Make HTTP request
+const data = await http.get("https://api.example.com");
+
+// Read file
+const content = await fs.read("./data.txt");
+```
+
+## Creating Custom Skills
+
+```typescript
+// skills/my-skill.ts
+import { defineSkill } from "@gizzi/sdk";
+
+export default defineSkill({
+  name: "my-skill",
+  actions: {
+    greet: async (name: string) => {
+      return `Hello, ${name}!`;
+    }
+  }
+});
+```
+
+Register in `.gizzi/config.yaml`:
+
+```yaml
+skills:
+  - ./skills/my-skill
+```

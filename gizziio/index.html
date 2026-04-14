@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gizzi Code - AI-powered terminal interface for the Allternit ecosystem">
+    <meta name="theme-color" content="#D4B08C">
+    <title>Install Gizzi Code</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --gizzi-beige: #d4b08c;
+            --gizzi-brown: #8f6f56;
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --border: rgba(255, 255, 255, 0.1);
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            flex: 1;
+        }
+        
+        .hero {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .mascot {
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.3;
+            white-space: pre;
+            color: #D4B08C;
+            margin-bottom: 16px;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #D4B08C;
+            font-family: Georgia, 'Times New Roman', serif;
+            margin-bottom: 12px;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .install-box {
+            background: var(--bg-secondary);
+            border: 1px solid rgba(212, 176, 140, 0.3);
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 40px;
+        }
+        
+        .install-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        
+        .install-command {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            background: #0d0d12;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 20px;
+        }
+        
+        .install-command code {
+            flex: 1;
+            font-family: 'Courier New', monospace;
+            font-size: 15px;
+            color: #D4B08C;
+            overflow-x: auto;
+        }
+        
+        .copy-btn {
+            background: transparent;
+            border: 1px solid #D4B08C;
+            color: #D4B08C;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        
+        .copy-btn:hover {
+            background: #D4B08C;
+            color: var(--bg-primary);
+        }
+        
+        .copy-btn.copied {
+            background: var(--gizzi-beige);
+            border-color: var(--gizzi-beige);
+            color: var(--bg-primary);
+        }
+        
+        .install-btn {
+            display: block;
+            width: 100%;
+            padding: 16px 24px;
+            background: #D4B08C;
+            color: var(--bg-primary);
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .install-btn:hover {
+            background: var(--gizzi-beige);
+            transform: translateY(-1px);
+        }
+        
+        .section-title {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+        
+        .method {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+        }
+        
+        .method h3 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+        
+        .method code {
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            color: #D4B08C;
+            background: #0d0d12;
+            padding: 10px 12px;
+            border-radius: 6px;
+            display: block;
+            overflow-x: auto;
+            margin-bottom: 8px;
+        }
+        
+        .method p {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+        
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        
+        .links a {
+            color: #D4B08C;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+        
+        .links a:hover {
+            color: var(--gizzi-beige);
+            text-decoration: underline;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+        
+        footer a {
+            color: #D4B08C;
+            text-decoration: none;
+        }
+        
+        .glow {
+            position: fixed;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(217, 119, 87, 0.06) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 32px; }
+            .install-command { flex-direction: column; align-items: stretch; }
+            .install-command code { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="glow"></div>
+    
+    <div class="container">
+        <div class="hero">
+            <pre class="mascot">      ▄▄      
+   ▄▄▄  ▄▄▄   
+ ▄██████████▄ 
+ █  ●    ●  █ 
+ █  ~ : / / █ 
+  ▀████████▀  
+   █ █  █ █   
+   ▀ ▀  ▀ ▀   </pre>
+            <h1>Gizzi Code</h1>
+            <p>AI-powered terminal interface for the Allternit ecosystem. Code with natural language.</p>
+        </div>
+        
+        <div class="install-box">
+            <div class="install-label">Quick Install</div>
+            <div class="install-command">
+                <code id="install-cmd">curl -fsSL https://install.gizziio.com/install | bash</code>
+                <button class="copy-btn" onclick="copyInstall()">Copy</button>
+            </div>
+            <div class="install-command">
+                <code>npm install -g @allternit/gizzi-code</code>
+                <a href="https://www.npmjs.com/package/@allternit/gizzi-code" class="copy-btn" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center;">NPM</a>
+            </div>
+            <a href="https://github.com/Gizziio/allternit-platform/releases/latest" class="install-btn">
+                Download Latest Release
+            </a>
+        </div>
+        
+        <div class="section-title">Other Install Methods</div>
+        
+        <div class="methods">
+            <div class="method">
+                <h3>NPM</h3>
+                <code>npm install -g @allternit/gizzi-code</code>
+                <p>Universal install via Node.js</p>
+            </div>
+            <div class="method">
+                <h3>Homebrew</h3>
+                <code>brew install gizzi-code</code>
+                <p>macOS and Linux package manager</p>
+            </div>
+            <div class="method">
+                <h3>Windows PowerShell</h3>
+                <code>irm https://install.gizziio.com/install.ps1 | iex</code>
+                <p>PowerShell install for Windows</p>
+            </div>
+            <div class="method">
+                <h3>Manual Download</h3>
+                <code>github.com/Gizziio/allternit-platform/releases</code>
+                <p>Download binary for your platform</p>
+            </div>
+        </div>
+        
+        <div class="links">
+            <a href="https://github.com/Gizziio/allternit-platform">GitHub</a>
+            <a href="https://docs.gizziio.com">Documentation</a>
+            <a href="https://allternit.com">Allternit</a>
+            <a href="https://www.npmjs.com/package/@allternit/sdk">SDK</a>
+            <a href="https://www.npmjs.com/package/@allternit/plugin-sdk">Plugins</a>
+        </div>
+    </div>
+    
+    <footer>
+        <p>MIT License © 2025 Gizzi.io</p>
+    </footer>
+    
+    <script>
+        function copyInstall() {
+            const cmd = document.getElementById('install-cmd').textContent;
+            navigator.clipboard.writeText(cmd);
+            const btn = document.querySelector('.copy-btn');
+            btn.textContent = 'Copied!';
+            btn.classList.add('copied');
+            setTimeout(() => {
+                btn.textContent = 'Copy';
+                btn.classList.remove('copied');
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

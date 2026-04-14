@@ -1,0 +1,66 @@
+---
+title: "Computer Use"
+description: "Enable agents to control your computer"
+---
+
+# Computer Use
+
+Gizzi Code supports computer use capabilities for browser and desktop automation.
+
+## Browser Automation
+
+Install the browser skill:
+
+```bash
+gizzi skill add @gizzi/skill-browser
+```
+
+### Basic Usage
+
+```typescript
+import { browser } from "@gizzi/skills";
+
+await browser.goto("https://example.com");
+await browser.click("button#submit");
+const text = await browser.getText("h1");
+```
+
+### Screenshots
+
+```typescript
+const screenshot = await browser.screenshot();
+// Use screenshot with vision models
+```
+
+## Desktop Control
+
+Install the desktop skill:
+
+```bash
+gizzi skill add @gizzi/skill-desktop
+```
+
+### Mouse & Keyboard
+
+```typescript
+import { desktop } from "@gizzi/skills";
+
+await desktop.moveMouse(500, 300);
+await desktop.click();
+await desktop.type("Hello World");
+await desktop.keyPress("Enter");
+```
+
+## Security
+
+Computer use requires explicit permission:
+
+```yaml
+# .gizzi/config.yaml
+security:
+  computer_use:
+    enabled: true
+    confirm_actions: true  # Ask before each action
+    allowed_domains:
+      - "*.example.com"
+```

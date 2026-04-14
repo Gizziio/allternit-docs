@@ -1,0 +1,38 @@
+---
+title: "Service Catalog"
+description: "Available services and integrations"
+---
+
+# Service Catalog
+
+Discover and use services in your agents.
+
+## Listing Services
+
+```typescript
+import { catalog } from "@allternit/sdk";
+
+const services = await catalog.list();
+```
+
+## Service Types
+
+### LLM Services
+
+- `claude` — Anthropic Claude
+- `openai` — OpenAI GPT
+- `kimi` — Moonshot Kimi
+- `gemini` — Google Gemini
+
+### Utility Services
+
+- `search` — Web search
+- `browser` — Browser automation
+- `files` — File operations
+
+## Using Services
+
+```typescript
+const llm = await catalog.get("claude");
+const response = await llm.complete("Hello");
+```

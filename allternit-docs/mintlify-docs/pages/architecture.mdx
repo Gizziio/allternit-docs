@@ -1,0 +1,48 @@
+---
+title: "Architecture"
+description: "Understanding Allternit's system design"
+---
+
+# Architecture
+
+Allternit is designed around a **local-first, git-native** architecture.
+
+## Core Components
+
+### Gizzi Runtime
+
+The local execution environment that runs agents in sandboxed processes.
+
+```
+┌─────────────────────────────────────┐
+│           Your Machine              │
+│  ┌─────────────────────────────┐    │
+│  │      Gizzi Runtime          │    │
+│  │  ┌─────────────────────┐    │    │
+│  │  │   Agent Process     │    │    │
+│  │  │  ┌───────────────┐  │    │    │
+│  │  │  │  Skill: HTTP  │  │    │    │
+│  │  │  │  Skill: Files │  │    │    │
+│  │  │  └───────────────┘  │    │    │
+│  │  └─────────────────────┘    │    │
+│  └─────────────────────────────┘    │
+└─────────────────────────────────────┘
+```
+
+### Communication Bus
+
+Message-based coordination between agents using a local pub/sub system.
+
+### Git DAG
+
+Every agent execution creates a commit in a local Git repository, enabling:
+- Full history of all runs
+- Branching and merging workflows
+- Rollbacks and reproduction
+
+## Data Flow
+
+1. **Input** → Agent receives message/task
+2. **Process** → Runtime executes with skills
+3. **Output** → Results returned to caller
+4. **Persist** → Execution logged to Git

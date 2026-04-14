@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Install Gizzi Code</title>
+    <meta name="description" content="Install Gizzi Code CLI - The agent runtime for local-first AI development">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" sizes="16x16" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" sizes="32x32" href="/favicon.svg" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #0a0a0f;
+            color: #d4b08c;
+            font-family: 'SF Mono', Monaco, monospace;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 600px;
+            text-align: center;
+        }
+        .mascot {
+            color: #d97757;
+            font-size: 1.2rem;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+            white-space: pre;
+        }
+        h1 {
+            color: #d97757;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .install-box {
+            background: #12121a;
+            border: 1px solid #d9775733;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-size: 0.9rem;
+            position: relative;
+        }
+        .install-box code {
+            color: #d97757;
+        }
+        .copy-btn {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #d97757;
+            color: #0a0a0f;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.8rem;
+        }
+        .copy-btn:hover {
+            background: #e8997a;
+        }
+        .links {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .links a {
+            color: #d97757;
+            text-decoration: none;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="mascot">
+      ▄▄      
+   ▄▄▄  ▄▄▄   
+ ▄██████████▄ 
+ █  ●    ●  █ 
+ █  A : / / █ 
+  ▀████████▀  
+   █ █  █ █   
+   ▀ ▀  ▀ ▀   
+        </div>
+        <h1>Gizzi Code</h1>
+        <p>The agent runtime for local-first AI development</p>
+        
+        <div class="install-box">
+            <code>curl -fsSL https://install.gizziio.com/install | bash</code>
+            <button class="copy-btn" onclick="copyInstall()">Copy</button>
+        </div>
+        
+        <div class="links">
+            <a href="https://docs.allternit.com">Documentation</a>
+            <a href="https://github.com/Gizziio/gizzi-code">GitHub</a>
+        </div>
+    </div>
+    
+    <script>
+        function copyInstall() {
+            navigator.clipboard.writeText('curl -fsSL https://install.gizziio.com/install | bash');
+            alert('Copied to clipboard!');
+        }
+    </script>
+</body>
+</html>

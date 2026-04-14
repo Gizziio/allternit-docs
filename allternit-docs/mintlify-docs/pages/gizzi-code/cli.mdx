@@ -1,0 +1,87 @@
+---
+title: "CLI Reference"
+description: "Complete reference for Gizzi Code CLI commands"
+---
+
+# CLI Reference
+
+## Global Commands
+
+### `gizzi init [name]`
+
+Initialize a new agent project.
+
+```bash
+gizzi init my-agent
+gizzi init  # Uses current directory name
+```
+
+### `gizzi run <agent>`
+
+Execute an agent.
+
+```bash
+gizzi run hello-world
+gizzi run hello-world --input "Custom input"
+gizzi run hello-world --watch  # Watch mode
+```
+
+### `gizzi dev`
+
+Start development server with hot reload.
+
+```bash
+gizzi dev
+gizzi dev --port 3000
+```
+
+### `gizzi build`
+
+Build agent for production.
+
+```bash
+gizzi build
+gizzi build --output ./dist
+```
+
+## Configuration Commands
+
+### `gizzi config`
+
+Manage configuration.
+
+```bash
+gizzi config get providers.default
+gizzi config set providers.default openai
+gizzi config list
+```
+
+### `gizzi skill`
+
+Manage skills.
+
+```bash
+gizzi skill list
+gizzi skill add @gizzi/skill-browser
+gizzi skill remove @gizzi/skill-browser
+```
+
+## Debug Commands
+
+### `gizzi logs`
+
+View runtime logs.
+
+```bash
+gizzi logs
+gizzi logs --follow
+gizzi logs --agent my-agent
+```
+
+### `gizzi status`
+
+Check runtime status.
+
+```bash
+gizzi status
+```

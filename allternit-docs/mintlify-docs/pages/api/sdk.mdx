@@ -1,0 +1,60 @@
+---
+title: "TypeScript SDK"
+description: "Allternit TypeScript SDK reference"
+---
+
+# TypeScript SDK
+
+```bash
+npm install @allternit/sdk
+```
+
+## AllternitClient
+
+Main entry point for the SDK.
+
+```typescript
+import { AllternitClient } from "@allternit/sdk";
+
+const client = new AllternitClient({
+  baseUrl: "http://localhost:8080"
+});
+```
+
+### Methods
+
+#### `run(options)`
+
+Execute an agent.
+
+```typescript
+const result = await client.run({
+  agent: "my-agent",
+  input: "Hello",
+  timeout: 30000
+});
+```
+
+**Parameters:**
+| Name | Type | Description |
+|------|------|-------------|
+| `agent` | `string` | Agent name |
+| `input` | `string` | Input text |
+| `timeout` | `number` | Timeout in ms |
+
+#### `listAgents()`
+
+List available agents.
+
+```typescript
+const agents = await client.listAgents();
+// [{ name: "hello", description: "..." }]
+```
+
+#### `getStatus()`
+
+Check runtime status.
+
+```typescript
+const status = await client.getStatus();
+```

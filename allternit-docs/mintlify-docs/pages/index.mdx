@@ -1,0 +1,71 @@
+---
+title: "Allternit Documentation"
+description: "Build intelligent agents with Allternit - the local-first agent runtime"
+---
+
+# Welcome to Allternit
+
+Allternit is a **local-first agent runtime** that runs AI agents entirely on your machine. No data leaves your computer unless you explicitly configure external providers.
+
+## What is Allternit?
+
+Allternit provides the infrastructure for building, running, and orchestrating AI agents:
+
+- **🤖 Gizzi Runtime** — Execute agents locally with full sandboxing
+- **💬 Communication** — Message bus for agent-to-agent coordination  
+- **🌿 Git DAG** — Version control for agent workflows
+- **🛠️ Skills** — Extensible capability system
+
+## Quick Start
+
+Install Gizzi Code in one command:
+
+```bash
+curl -fsSL https://install.gizziio.com/install | bash
+```
+
+Then create your first agent:
+
+```typescript
+import { AllternitClient } from "@allternit/sdk";
+
+const client = new AllternitClient();
+
+await client.run({
+  agent: "hello-world",
+  input: "What's the weather?"
+});
+```
+
+## Architecture
+
+Allternit is built on three core principles:
+
+<CardGroup cols={2}>
+  <Card title="Local-First" icon="shield">
+    All computation happens on your device. No cloud dependencies.
+  </Card>
+  <Card title="Git-Native" icon="git-branch">
+    Every workflow is versioned. Track, branch, and merge agent runs.
+  </Card>
+  <Card title="Provider-Agnostic" icon="plug">
+    Use any LLM provider. Claude, OpenAI, Kimi, Gemini, or local models.
+  </Card>
+  <Card title="Extensible" icon="puzzle">
+    Add capabilities via skills. HTTP APIs, file system, browser automation.
+  </Card>
+</CardGroup>
+
+## Next Steps
+
+<CardGroup cols={3}>
+  <Card title="Quickstart" icon="rocket" href="/quickstart">
+    Get up and running in 5 minutes
+  </Card>
+  <Card title="Gizzi Code" icon="terminal" href="/gizzi-code/quickstart">
+    Learn the CLI and local runtime
+  </Card>
+  <Card title="API Reference" icon="code" href="/api/sdk">
+    Explore the TypeScript SDK
+  </Card>
+</CardGroup>

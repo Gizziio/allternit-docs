@@ -1,0 +1,38 @@
+---
+title: "Gizzi Runtime"
+description: "Understanding the local agent runtime"
+---
+
+# Gizzi Runtime
+
+The Gizzi Runtime executes agents locally in sandboxed environments.
+
+## How It Works
+
+1. **Parse** — Load agent definition
+2. **Validate** — Check configuration and skills
+3. **Execute** — Run in isolated process
+4. **Monitor** — Track resources and timeout
+
+## Sandboxing
+
+Agents run with restricted permissions:
+
+- File system access only to project directory
+- Network access controlled by skills
+- Memory limits enforced
+- Timeout protection
+
+## Lifecycle
+
+```
+Agent Definition
+      ↓
+Validation
+      ↓
+Skill Loading
+      ↓
+Execution
+      ↓
+Cleanup
+```

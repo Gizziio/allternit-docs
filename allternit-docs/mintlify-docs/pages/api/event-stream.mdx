@@ -1,0 +1,39 @@
+---
+title: "Event Stream"
+description: "Real-time event streaming"
+---
+
+# Event Stream
+
+Subscribe to real-time agent events.
+
+## Basic Usage
+
+```typescript
+import { events } from "@allternit/sdk";
+
+const stream = events.subscribe();
+
+for await (const event of stream) {
+  console.log(event.type, event.data);
+}
+```
+
+## Event Types
+
+| Event | Description |
+|-------|-------------|
+| `agent.start` | Agent started |
+| `agent.complete` | Agent finished |
+| `agent.error` | Agent error |
+| `tool.call` | Tool invoked |
+| `message` | New message |
+
+## Filtering
+
+```typescript
+const stream = events.subscribe({
+  agent: "my-agent",
+  types: ["agent.complete", "agent.error"]
+});
+```

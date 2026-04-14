@@ -1,0 +1,45 @@
+---
+title: "Communication"
+description: "Agent-to-agent messaging system"
+---
+
+# Communication
+
+Allternit uses a local pub/sub system for agent coordination.
+
+## Message Bus
+
+Agents communicate via typed messages:
+
+```typescript
+import { bus } from "@allternit/sdk";
+
+// Subscribe to messages
+bus.on("task.complete", (msg) => {
+  console.log(`Task ${msg.id} completed`);
+});
+
+// Publish messages
+bus.emit("task.start", { id: "123", agent: "worker" });
+```
+
+## Direct Messaging
+
+Send messages to specific agents:
+
+```typescript
+await bus.send("agent-2", {
+  type: "request",
+  data: { query: "..." }
+});
+```
+
+## Channels
+
+Organize communication by topic:
+
+```typescript
+const logs = bus.channel("logs");
+logs.subscribe((entry) => console.log(entry));
+logs.publish({ level: "info", message: "Started" });
+```

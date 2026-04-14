@@ -1,0 +1,40 @@
+---
+title: "Git DAG"
+description: "Version control for agent workflows"
+---
+
+# Git DAG
+
+Every agent execution is versioned using Git.
+
+## How It Works
+
+Each run creates a commit:
+
+```bash
+.gizzi/git/
+├── commits/
+│   ├── a1b2c3/  # Run #1
+│   └── d4e5f6/  # Run #2
+└── HEAD
+```
+
+## Benefits
+
+- **Reproducibility** — Re-run any previous execution
+- **Branching** — Try variations without affecting main
+- **Merging** — Combine successful experiments
+- **Auditing** — Full history of all agent actions
+
+## CLI Commands
+
+```bash
+# View history
+gizzi history
+
+# Checkout a run
+gizzi checkout a1b2c3
+
+# Branch from a run
+gizzi branch experiment a1b2c3
+```

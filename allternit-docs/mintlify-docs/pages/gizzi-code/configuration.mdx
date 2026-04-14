@@ -1,0 +1,54 @@
+---
+title: "Configuration"
+description: "Configure Gizzi Code runtime and providers"
+---
+
+# Configuration
+
+Configuration is stored in `.gizzi/config.yaml`.
+
+## Providers
+
+Configure LLM providers:
+
+```yaml
+providers:
+  default: claude
+  
+  claude:
+    api_key: ${CLAUDE_API_KEY}
+    model: claude-sonnet-4-20250514
+    max_tokens: 4096
+    
+  openai:
+    api_key: ${OPENAI_API_KEY}
+    model: gpt-4o
+    
+  kimi:
+    api_key: ${KIMI_API_KEY}
+    base_url: https://api.moonshot.cn/v1
+```
+
+## Runtime Settings
+
+```yaml
+runtime:
+  sandbox: true
+  timeout: 300000  # 5 minutes
+  max_memory: 512  # MB
+  
+logging:
+  level: info
+  file: .gizzi/logs/gizzi.log
+```
+
+## Skills
+
+Enable skills globally:
+
+```yaml
+skills:
+  - @gizzi/skill-http
+  - @gizzi/skill-filesystem
+  - ./custom-skill
+```

@@ -1,0 +1,97 @@
+{
+  "name": "Allternit Docs",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#D97757",
+    "light": "#E8997A",
+    "dark": "#B86242",
+    "background": {
+      "dark": "#0A0A0A"
+    },
+    "anchors": {
+      "from": "#D97757",
+      "to": "#F6C453"
+    }
+  },
+  "modeToggle": {
+    "default": "dark",
+    "isHidden": true
+  },
+  "topbarLinks": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/Gizziio/gizzi-code"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Install Gizzi",
+    "url": "https://install.gizziio.com"
+  },
+  "anchors": [
+    {
+      "name": "API Reference",
+      "icon": "code",
+      "url": "api-reference"
+    },
+    {
+      "name": "Changelog",
+      "icon": "clock",
+      "url": "changelog"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Get Started",
+      "pages": [
+        "index",
+        "quickstart",
+        "architecture"
+      ]
+    },
+    {
+      "group": "Gizzi Code",
+      "pages": [
+        "gizzi-code/quickstart",
+        "gizzi-code/installation",
+        "gizzi-code/cli",
+        "gizzi-code/configuration",
+        "gizzi-code/providers",
+        "gizzi-code/computer-use"
+      ]
+    },
+    {
+      "group": "Core Concepts",
+      "pages": [
+        "core/runtime",
+        "core/communication",
+        "core/git-dag",
+        "core/skills"
+      ]
+    },
+    {
+      "group": "API & SDK",
+      "pages": [
+        "api/sdk",
+        "api/service-catalog",
+        "api/event-stream"
+      ]
+    },
+    {
+      "group": "Surfaces",
+      "pages": [
+        "surfaces/desktop",
+        "surfaces/platform",
+        "surfaces/cli",
+        "surfaces/browser-extension"
+      ]
+    }
+  ],
+  "footerSocials": {
+    "github": "https://github.com/Gizziio",
+    "twitter": "https://twitter.com/allternit"
+  }
+}
