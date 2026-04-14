@@ -62,18 +62,10 @@ const navigation: NavItem[] = [
     ],
   },
   {
-    title: 'Gizzi Code',
-    path: '/docs/gizzi-code',
+    title: 'Gizzi Code Docs',
+    path: 'https://docs.gizziio.com',
     icon: Terminal,
-    badge: 'New',
-    children: [
-      { title: 'Quickstart', path: '/docs/gizzi-code/quickstart' },
-      { title: 'Installation', path: '/docs/gizzi-code/installation' },
-      { title: 'CLI Reference', path: '/docs/gizzi-code/cli' },
-      { title: 'Configuration', path: '/docs/gizzi-code/configuration' },
-      { title: 'Providers', path: '/docs/gizzi-code/providers' },
-      { title: 'Computer Use', path: '/docs/gizzi-code/computer-use' },
-    ],
+    badge: 'External',
   },
   {
     title: 'Surfaces',

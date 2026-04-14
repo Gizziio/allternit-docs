@@ -181,9 +181,9 @@ export function HomePage() {
               <a href="https://github.com/Gizziio/allternit-platform/tree/main/cmd/gizzi-code" target="_blank" rel="noopener noreferrer" className="text-[#d4b08c] hover:underline">
                 GitHub
               </a>
-              <Link to="/docs/gizzi-code/quickstart" className="text-[var(--text-secondary)] hover:text-[#D4B08C]">
-                Documentation
-              </Link>
+              <a href="https://docs.gizziio.com" target="_blank" rel="noopener noreferrer" className="text-[var(--text-secondary)] hover:text-[#D4B08C]">
+                Documentation ↗
+              </a>
               <a href="https://www.npmjs.com/package/@allternit/gizzi-code" target="_blank" rel="noopener noreferrer" className="text-[var(--text-secondary)] hover:text-[#D4B08C]">
                 NPM
               </a>
