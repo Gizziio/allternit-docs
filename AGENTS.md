@@ -38,7 +38,7 @@ npm run dev
 ## Warnings
 
 - Do not embed Gizzi Code documentation here — link externally to `gizzi-code-docs`.
-- The `dist/` folder is committed for easy static hosting; rebuild after content changes.
+- The `dist/` folder is build output and is no longer committed; run `npm run build` for static hosting.
 
 ## Related Repos
 

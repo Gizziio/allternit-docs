@@ -1,0 +1,11 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Packaged artifacts
+*.tgz
+
+# Editor / backup files
+*.bak
